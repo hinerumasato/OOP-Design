@@ -4,6 +4,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
+
     private float maxTemp = 0.0f;
     private float minTemp = 200;
     private float tempSum = 0.0f;
