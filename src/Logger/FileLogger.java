@@ -17,8 +17,9 @@ public class FileLogger implements Logger {
     @Override
     public void log(String msg) {
         try {
+            File file = new File(fileName);
             Writer out = new BufferedWriter(new OutputStreamWriter(
-            new FileOutputStream(new File(fileName), true)));
+            new FileOutputStream(file, true)));
             out.write(msg + "\n");
             out.close();
         } 

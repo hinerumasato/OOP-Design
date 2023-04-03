@@ -14,5 +14,8 @@ public class DecoratorClient {
 
         TimeStampingLogger tLogger = new TimeStampingLogger(logger);
         tLogger.log(msg);
+
+        EncryptLogger eLogger = new EncryptLogger(logger);
+        eLogger.log(msg);
     }
 }
