@@ -2,32 +2,36 @@ package VideoRental;
 
 public class Movie {
     private String title;
-    private ChargeComputing chargeComputing;
-    private FrequentRenterPointComputing frequentRenterPointComputing;
+    private ChargeWay chargeWay;
+    private FrequentRenterPointWay frequentRenterPointWay;
     private boolean available;
 
-    public Movie(String title, ChargeComputing price,
-            FrequentRenterPointComputing frequentRenterPoint) {
+    public Movie(String title, ChargeWay price,
+            FrequentRenterPointWay frequentRenterPoint) {
         this.title = title;
-        this.chargeComputing = price;
-        this.frequentRenterPointComputing = frequentRenterPoint;
+        this.chargeWay = price;
+        this.frequentRenterPointWay = frequentRenterPoint;
         available = true;
     }
 
-    public ChargeComputing getChargeComputing() {
-        return chargeComputing;
+    public Movie(String title) {
+        this.title = title;
     }
 
-    public void setChargeComputing(ChargeComputing arg) {
-        chargeComputing = arg;
+    public ChargeWay getChargeWay() {
+        return chargeWay;
     }
 
-    public FrequentRenterPointComputing getFrequentRenterPoint() {
-        return frequentRenterPointComputing;
+    public void setChargeWay(ChargeWay arg) {
+        chargeWay = arg;
     }
 
-    public void setFrequentRenterPoint(FrequentRenterPointComputing frpComputing) {
-        this.frequentRenterPointComputing = frpComputing;
+    public FrequentRenterPointWay getFrequentRenterPoint() {
+        return frequentRenterPointWay;
+    }
+
+    public void setFrequentRenterPointWay(FrequentRenterPointWay frpComputing) {
+        this.frequentRenterPointWay = frpComputing;
     }
 
     public String getTitle() {
@@ -35,11 +39,11 @@ public class Movie {
     }
 
     public double getCharge(int daysRented) {
-        return chargeComputing.getCharge(daysRented);
+        return chargeWay.getCharge(daysRented);
     }
 
     public int getFrequentRenterPoints(int daysRented) {
-        return frequentRenterPointComputing.getPoints(daysRented);
+        return frequentRenterPointWay.getFrequentRenterPoints(daysRented);
     }
 
     public boolean isAvailable() {
