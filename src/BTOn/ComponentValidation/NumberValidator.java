@@ -1,6 +1,6 @@
 package BTOn.ComponentValidation;
 
-public class NumberValidation implements Validation {
+public class NumberValidation implements Validator {
 
     private boolean isNumber(String data) {
         for (char c : data.toCharArray())

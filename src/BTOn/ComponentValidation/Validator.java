@@ -1,5 +1,5 @@
 package BTOn.ComponentValidation;
 
-public interface Validation {
+public interface Validator {
     public boolean validate(Object data);
 }

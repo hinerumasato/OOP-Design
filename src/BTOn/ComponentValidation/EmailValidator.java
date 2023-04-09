@@ -1,6 +1,6 @@
 package BTOn.ComponentValidation;
 
-public class EmailValidation implements Validation {
+public class EmailValidation implements Validator {
 
     private boolean isEmail(String data) {
         return data.contains("@") && data.contains(".");

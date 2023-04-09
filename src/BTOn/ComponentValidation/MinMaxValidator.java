@@ -1,6 +1,6 @@
 package BTOn.ComponentValidation;
 
-public class MinMaxValidation implements Validation {
+public class MinMaxValidation implements Validator {
 
     private double min;
     private double max;

@@ -1,6 +1,6 @@
 package BTOn.ComponentValidation;
 
-public class PhoneValidation implements Validation {
+public class PhoneValidation implements Validator {
 
     private boolean isPhoneNumber(String data) {
         String prefix = data.substring(0, 2);
