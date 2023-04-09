@@ -32,8 +32,12 @@ public abstract class Component {
 
     public void validate() {
         for (Validator rule : this.rules) {
-            System.out.println(rule.getClass().getName() + ": " + rule.validate(this.data));
+            if(!rule.validate(this.data)) {
+                System.out.println("Không hợp lệ");
+                return;
+            }
         }
+        System.out.println("Hợp lệ");
     }
 
 }
