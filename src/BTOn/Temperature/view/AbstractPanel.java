@@ -27,7 +27,6 @@ public abstract class AbstractPanel extends JPanel implements Observer {
         awake();
         init();
         addEvents();
-        this.weatherData.registerObserver(this);
     }
 
     public AbstractPanel(WeatherData weatherData, String title) {
@@ -36,21 +35,20 @@ public abstract class AbstractPanel extends JPanel implements Observer {
         awake();
         init();
         addEvents();
-        this.weatherData.registerObserver(this);
     }
-
+    
     public void awake() {
         this.temperatureTextField = new JTextField(10);
         this.raiseButton = new JButton("Raise");
         this.lowerButton = new JButton("Lower");
     }
-
+    
     public void addEvents() {
         this.raiseButton.addActionListener(buttonController);
         this.lowerButton.addActionListener(buttonController);
         this.temperatureTextField.addActionListener(textFieldController);
     }
-
+    
     public void init() {
         setBorder(BorderFactory.createTitledBorder(ABSTRACT_PANEL_TITLE));
         setLayout(new GridLayout(2, 1));
@@ -58,7 +56,8 @@ public abstract class AbstractPanel extends JPanel implements Observer {
         buttonPanel.setLayout(new GridLayout(1, 2));
         buttonPanel.add(raiseButton);
         buttonPanel.add(lowerButton);
-
+        
+        this.weatherData.registerObserver(this);
         add(temperatureTextField);
         add(buttonPanel);
     }

@@ -23,7 +23,7 @@ public class Temperature extends JFrame {
     }
 
     public void addEvents() {
-
+        
     }
 
     public void awake() {
@@ -49,10 +49,5 @@ public class Temperature extends JFrame {
 
         getContentPane().add(temperaturePanel, BorderLayout.WEST);
         getContentPane().add(temperatureBarPanel, BorderLayout.EAST);
-    }
-
-
-    public static void main(String[] args) {
-        new Temperature();
     }
 }
