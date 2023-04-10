@@ -53,23 +53,4 @@ public class Temperature extends JFrame {
     public static void main(String[] args) {
         new Temperature();
     }
-
-    public AbstractPanel getCelsiusPanel() {
-        return celsiusPanel;
-    }
-
-    public void setCelsiusPanel(CelsiusPanel celsiusPanel) {
-        this.celsiusPanel = celsiusPanel;
-    }
-
-    public void setFahrenheitPanel(FahrenheitPanel fahrenheitPanel) {
-        this.fahrenheitPanel = fahrenheitPanel;
-    }
-    public WeatherData getWeatherData() {
-        return weatherData;
-    }
-
-    public void setWeatherData(WeatherData weatherData) {
-        this.weatherData = weatherData;
-    }
 }

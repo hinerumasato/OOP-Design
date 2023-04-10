@@ -3,7 +3,7 @@ package BTOn.Temperature.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherData implements Subject {
+public class WeatherData implements Observable {
 
     private float fahrenheitTemperature;
     private float celsiusTemperature;
