@@ -10,6 +10,8 @@ import BTOn.Temperature.model.WeatherData;
 
 public class Temperature extends JFrame {
 
+    private final String APP_TITLE = "Temperature";
+
     private AbstractPanel celsiusPanel;
     private AbstractPanel fahrenheitPanel;
     private TemperatureBarPanel temperatureBarPanel;
@@ -33,7 +35,7 @@ public class Temperature extends JFrame {
 
     public void init() {
         setSize(400, 200);
-        setTitle("Temperature");
+        setTitle(APP_TITLE);
         setVisible(true);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
