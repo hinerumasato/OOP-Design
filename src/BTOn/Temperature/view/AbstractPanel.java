@@ -8,15 +8,18 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import BTOn.Temperature.controller.ButtonController;
+import BTOn.Temperature.controller.TextFieldController;
+import BTOn.Temperature.model.Observer;
 import BTOn.Temperature.model.WeatherData;
 
-public abstract class AbstractPanel extends JPanel {
+public abstract class AbstractPanel extends JPanel implements Observer {
 
-    protected String ABSTRACT_PANEL_TITILE = "Abstract Temperature";
+    protected String ABSTRACT_PANEL_TITLE = "Abstract Temperature";
     protected JTextField temperatureTextField;
     protected JButton raiseButton;
     protected JButton lowerButton;
     protected ButtonController buttonController;
+    protected TextFieldController textFieldController;
     protected Temperature temperature;
     protected WeatherData weatherData;
 
@@ -24,32 +27,32 @@ public abstract class AbstractPanel extends JPanel {
         awake();
         init();
         addEvents();
+        this.weatherData.registerObserver(this);
     }
 
-    public AbstractPanel(Temperature temperature, String title) {
-        this.ABSTRACT_PANEL_TITILE = title;
-        this.temperature = temperature;
-        this.weatherData = temperature.getWeatherData();
+    public AbstractPanel(WeatherData weatherData, String title) {
+        this.ABSTRACT_PANEL_TITLE = title;
+        this.weatherData = weatherData;
         awake();
         init();
         addEvents();
+        this.weatherData.registerObserver(this);
     }
 
     public void awake() {
         this.temperatureTextField = new JTextField(10);
         this.raiseButton = new JButton("Raise");
         this.lowerButton = new JButton("Lower");
-
-        this.buttonController = new ButtonController(this);
     }
 
     public void addEvents() {
         this.raiseButton.addActionListener(buttonController);
         this.lowerButton.addActionListener(buttonController);
+        this.temperatureTextField.addActionListener(textFieldController);
     }
 
     public void init() {
-        setBorder(BorderFactory.createTitledBorder(ABSTRACT_PANEL_TITILE));
+        setBorder(BorderFactory.createTitledBorder(ABSTRACT_PANEL_TITLE));
         setLayout(new GridLayout(2, 1));
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(1, 2));
@@ -60,12 +63,16 @@ public abstract class AbstractPanel extends JPanel {
         add(buttonPanel);
     }
 
-    public String getABSTRACT_PANEL_TITILE() {
-        return ABSTRACT_PANEL_TITILE;
+    public void setTemperatureTextFieldContent(String content) {
+        this.temperatureTextField.setText(content);
     }
 
-    public void setABSTRACT_PANEL_TITILE(String aBSTRACT_PANEL_TITILE) {
-        ABSTRACT_PANEL_TITILE = aBSTRACT_PANEL_TITILE;
+    public String getABSTRACT_PANEL_TITLE() {
+        return ABSTRACT_PANEL_TITLE;
+    }
+
+    public void setABSTRACT_PANEL_TITLE(String aBSTRACT_PANEL_TITILE) {
+        ABSTRACT_PANEL_TITLE = aBSTRACT_PANEL_TITILE;
     }
 
     public JTextField getTemperatureTextField() {
@@ -106,5 +113,13 @@ public abstract class AbstractPanel extends JPanel {
 
     public void setWeatherData(WeatherData weatherData) {
         this.weatherData = weatherData;
+    }
+
+    public Temperature getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Temperature temperature) {
+        this.temperature = temperature;
     }
 }

@@ -8,9 +8,11 @@ public class WeatherData implements Subject {
     private float fahrenheitTemperature;
     private float celsiusTemperature;
     private List<Observer> observers;
+    private boolean isChanged;
 
     public WeatherData() {
         this.observers = new ArrayList<Observer>();
+        this.isChanged = false;
     }
 
     public WeatherData(float fahrenheitTemperature, float celsiusTemperature) {
@@ -26,6 +28,7 @@ public class WeatherData implements Subject {
     public void setFahrenheitTemperature(float fahrenheitTemperature) {
         this.fahrenheitTemperature = fahrenheitTemperature;
         this.celsiusTemperature = (float) ((this.fahrenheitTemperature - 32) * 1.8);
+        isChanged = true;
         notifyAllObserver();
     }
 
@@ -36,6 +39,7 @@ public class WeatherData implements Subject {
     public void setCelsiusTemperature(float celsiusTemperature) {
         this.celsiusTemperature = celsiusTemperature;
         this.fahrenheitTemperature = (float) ((this.celsiusTemperature * 1.8) + 32);
+        isChanged = true;
         notifyAllObserver();
     }
 
@@ -62,8 +66,11 @@ public class WeatherData implements Subject {
 
     @Override
     public void notifyAllObserver() {
-        for (Observer observer : observers)
-            observer.update(fahrenheitTemperature, celsiusTemperature);
+        if(isChanged) {
+            for (Observer observer : observers)
+                observer.update(fahrenheitTemperature, celsiusTemperature);
+            isChanged = false;
+        }
     }
 
 }
