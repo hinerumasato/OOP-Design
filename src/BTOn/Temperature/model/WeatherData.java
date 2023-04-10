@@ -27,7 +27,7 @@ public class WeatherData implements Observable {
 
     public void setFahrenheitTemperature(float fahrenheitTemperature) {
         this.fahrenheitTemperature = fahrenheitTemperature;
-        this.celsiusTemperature = (float) ((this.fahrenheitTemperature - 32) * 1.8);
+        this.celsiusTemperature = (float) ((this.fahrenheitTemperature - 32) * ((float) 5 / 9));
         isChanged = true;
         notifyAllObserver();
     }
