@@ -1,4 +1,4 @@
-package BTOn.EncryptComponent;
+package BTOn.ComponentEncryption;
 
 public interface Component {
     public void input(String data);

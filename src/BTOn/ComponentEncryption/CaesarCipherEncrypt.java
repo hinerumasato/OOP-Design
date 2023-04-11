@@ -1,4 +1,4 @@
-package BTOn.EncryptComponent;
+package BTOn.ComponentEncryption;
 
 public class CaesarCipherEncrypt implements Enryptable {
 

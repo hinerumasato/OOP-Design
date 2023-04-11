@@ -1,4 +1,4 @@
-package BTOn.EncryptComponent;
+package BTOn.ComponentEncryption;
 
 import java.util.ArrayList;
 import java.util.List;
