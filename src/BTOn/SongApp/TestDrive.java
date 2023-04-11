@@ -32,7 +32,7 @@ public class TestDrive {
 		website.addAlbum(album1);
 		website.addAlbum(album2);
 
-		List<MusicFile> resultSearch = website.searchBy(new SearchByName("a"), new SearchByAuthor("Hoang"));
+		List<MusicFile> resultSearch = website.searchBy(new SearchByName("a"), new SearchByAuthor("Hoang"), new SearchByPerformer("MCK"), new SearchByCategory("Pop"));
 		for(MusicFile musicFile : resultSearch)
 			System.out.println(musicFile);
     }

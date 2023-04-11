@@ -16,7 +16,6 @@ public class Website {
 
     public List<MusicFile> searchBy(SearchBehavior ... searchBehaviors) {
         List<MusicFile> result = new ArrayList<MusicFile>();
-        List<Album> searchedAlbums = new ArrayList<Album>();
         boolean isFirstSearch = true;
         for(SearchBehavior searchBehavior : searchBehaviors)
             if(isFirstSearch) {
@@ -25,6 +24,7 @@ public class Website {
             }
             else {
                 Album searchedAlbum = new Album();
+                List<Album> searchedAlbums = new ArrayList<Album>();
                 for(MusicFile musicFile : result)
                     searchedAlbum.addMusicFile(musicFile);
                 searchedAlbums.add(searchedAlbum);
