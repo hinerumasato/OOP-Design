@@ -20,7 +20,6 @@ public abstract class AbstractPanel extends JPanel implements Observer {
     protected JButton lowerButton;
     protected ButtonController buttonController;
     protected TextFieldController textFieldController;
-    protected Temperature temperature;
     protected WeatherData weatherData;
 
     public AbstractPanel() {
