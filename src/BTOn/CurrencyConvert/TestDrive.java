@@ -5,7 +5,7 @@ public class TestDrive {
         CurrencyMeasure usd = new CurrencyMeasure(1000, new USDCurrencyUnit());
         CurrencyMeasure vnd = new CurrencyMeasure(40000, new VNDCurrencyUnit());
 
-        CurrencyConvert converter = new CurrenyConvertAdapter();
+        CurrencyConvert converter = new USDConvertAdapter();
         CurrencyMeasure jpy = converter.convert(vnd, new JPYCurrencyUnit());
         System.out.println(jpy.getValue());
 
