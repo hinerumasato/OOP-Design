@@ -3,7 +3,7 @@ package BTOn.ComponentValidation;
 public class EmailValidator implements Validator {
 
     private boolean isEmail(String data) {
-        return data.contains("@") && data.contains(".");
+        return data.split("\\@").length == 2 && data.contains(".");
     }
 
     @Override
