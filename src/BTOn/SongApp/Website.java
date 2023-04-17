@@ -44,23 +44,24 @@ public class Website {
             @Override
             public int compare(MusicFile o1, MusicFile o2) {
                 int index = 0;
-                int result = 0;
+                int compareResult = 0;
 
-                while(result == 0) {
+                while(compareResult == 0) {
                     if(sortBehaviors[index] instanceof SortByName)
-                        result = o1.getSong().getTitle().compareTo(o2.getSong().getTitle());
+                        compareResult = o1.getSong().getTitle().compareTo(o2.getSong().getTitle());
                     if(sortBehaviors[index] instanceof SortByAuthor)
-                        result = o1.getSong().getAuthor().compareTo(o2.getSong().getAuthor());
-                        
+                        compareResult = o1.getSong().getAuthor().compareTo(o2.getSong().getAuthor());
+
                     if(!sortBehaviors[index].isAscending)
-                        result *= -1;
+                        compareResult *= -1;
                     index++;
                 }
 
-                return result;
+                return compareResult;
             }
             
         });
+        
         return result;
     }
 }

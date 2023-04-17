@@ -38,7 +38,8 @@ public class TestDrive {
 		List<MusicFile> resultSearch = website.searchBy(new SearchByName("a"), new SearchByAuthor("Hoang"),
 				new SearchByPerformer("MCK"), new SearchByCategory("Pop"));
 
-		List<MusicFile> resultSorted = website.sortBy(new SortByName(false), new SortByAuthor(false));
+		List<MusicFile> resultSorted = website.sortBy(new SortByName(SortBehavior.SORT_ASCENDING),
+				new SortByAuthor(SortBehavior.SORT_DESCENDING));
 		for (MusicFile musicFile : resultSorted)
 			System.out.println(musicFile);
 	}
