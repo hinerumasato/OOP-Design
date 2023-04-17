@@ -16,7 +16,7 @@ public class MinMaxValidator implements Validator {
 
     @Override
     public boolean validate(Object data) {
-        return isBetween(max);
+        return isBetween((double) data);
     }
     
 }
