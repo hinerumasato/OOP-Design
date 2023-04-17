@@ -2,7 +2,7 @@ package BTOn.LengthConvert;
 
 public class MetterConvertAdapter implements LengthConvert {
 
-    private MetterConvert metterConvert = new MetterConvert();
+    private IMetterConvert metterConvert = new MetterConvert();
 
     @Override
     public LengthMeasure convert(LengthMeasure measure, LengthUnit unit) {
@@ -10,6 +10,7 @@ public class MetterConvertAdapter implements LengthConvert {
         if(measure.getUnit().getExchangeRate() < 1)
             metterValue = measure.getValue() / measure.getUnit().getExchangeRate();
         else metterValue = measure.getValue() * measure.getUnit().getExchangeRate();
+        
         return metterConvert.convertToAnotherUnit(metterValue, unit);
     }
     

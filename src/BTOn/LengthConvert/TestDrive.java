@@ -7,9 +7,10 @@ public class TestDrive {
         LengthUnit metterUnit = new LengthUnit("m", 1);
 
         LengthMeasure mile = new LengthMeasure(30, mileUnit);
+        System.out.println(mile);
 
         LengthConvert converter = new MetterConvertAdapter();
-        System.out.println(converter.convert(mile, yardUnit));
+        converter.convert(mile, yardUnit);
 
     }
 }
