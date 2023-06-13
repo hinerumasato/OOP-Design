@@ -1,7 +1,5 @@
 package Composite.MenuWithIerator;
 
-import java.util.Iterator;
-
 public class TestDrive {
     public static void main(String[] args) {
         MenuComponent pancakeHouseMenu = new Menu("PANCAKE HOUSE MENU",
