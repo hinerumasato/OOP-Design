@@ -11,5 +11,5 @@ public abstract class StorageElement {
         return name;
     }
 
-    public abstract Object accept(Visitor visitor);
+    public abstract Object accept(Visitor visitor, Object... inp);
 }

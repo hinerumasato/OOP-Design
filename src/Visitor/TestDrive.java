@@ -19,5 +19,7 @@ public class TestDrive {
         allFiles.addChild(folder2);
 
         System.out.println(allFiles.accept(new CountFileVisitor()));
+
+        System.out.println(allFiles.accept(new DisplayContentVisitor(), 0));
     }
 }

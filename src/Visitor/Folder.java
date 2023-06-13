@@ -19,7 +19,7 @@ public class Folder extends StorageElement {
     }
 
     @Override
-    public Object accept(Visitor visitor) {
-        return visitor.visitFolder(this);
+    public Object accept(Visitor visitor, Object... inp) {
+        return visitor.visitFolder(this, inp);
     }
 }

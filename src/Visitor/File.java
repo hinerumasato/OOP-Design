@@ -14,7 +14,7 @@ public class File extends StorageElement {
 
 
     @Override
-    public Object accept(Visitor visitor) {
-        return visitor.visitFile(this);
+    public Object accept(Visitor visitor, Object... inp) {
+        return visitor.visitFile(this, inp);
     }
 }
