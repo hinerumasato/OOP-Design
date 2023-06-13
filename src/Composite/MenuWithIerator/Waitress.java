@@ -1,5 +1,7 @@
 package Composite.MenuWithIerator;
 
+import java.util.Iterator;
+
 public class Waitress {
     private MenuComponent allMenus;
 
@@ -8,6 +10,10 @@ public class Waitress {
     }
 
     public void printMenu() {
-        allMenus.print();
+        Iterator<MenuComponent> iterator = allMenus.createIterator();
+        while(iterator.hasNext()) {
+            MenuComponent component = iterator.next();
+            component.print();
+        }
     }
 }

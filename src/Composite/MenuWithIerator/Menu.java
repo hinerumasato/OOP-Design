@@ -40,8 +40,12 @@ public class Menu extends MenuComponent {
 
     public void print() {
         System.out.println(getName() + ": " + getDescription());
-        for (MenuComponent menuComponent : menuComponents) {
-            menuComponent.print();
-        }
     }
+
+    @Override
+    public String toString() {
+        return "Menu [name=" + name + ", description=" + description + "]";
+    }
+
+    
 }

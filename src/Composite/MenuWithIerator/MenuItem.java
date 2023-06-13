@@ -46,4 +46,11 @@ public class MenuItem extends MenuComponent {
     public void print() {
         System.out.println(getName() + ": " + getDescription());
     }
+
+    @Override
+    public String toString() {
+        return "MenuItem [name=" + name + ", description=" + description + "]";
+    }
+
+    
 }

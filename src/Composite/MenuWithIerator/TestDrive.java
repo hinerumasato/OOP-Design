@@ -68,7 +68,6 @@ public class TestDrive {
                 "Three almond or hazelnut biscotti cookies", true, 0.89));
         Waitress waitress = new Waitress(allMenus);
         
-        Iterator<MenuComponent> iterator = allMenus.createIterator();
-        iterator.next().print();
+        waitress.printMenu();
     }
 }
